@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+
+    <string name="login_Suc_Msg">登陆成功</string>
+    <string name="login_Err_Msg">登陆失败</string>
+    <string name="loadingMsgByLogin">登陆中...</string>
+    <string name="loadingMsg">数据加载中....</string>
+</resources>
