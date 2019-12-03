@@ -1,7 +1,10 @@
 package cn.rpy.wyy.base.mvc;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.xuexiang.xui.utils.SnackbarUtils;
@@ -9,22 +12,34 @@ import com.xuexiang.xui.utils.WidgetUtils;
 import com.xuexiang.xui.widget.dialog.LoadingDialog;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import cn.rpy.wyy.R;
 
 public abstract class BaseActivity<Presenter extends BasePresenter> extends AppCompatActivity implements IBaseView {
 
-    private Presenter mPresenter;
+    protected Presenter mPresenter;
     private LoadingDialog loadingDialog;
+    private Unbinder mBinder;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getColorId()!=-1) getWindow().setStatusBarColor(getResources().getColor(getColorId()));
+        startEntryAnim();
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        mBinder= ButterKnife.bind(this);
         init();
         initView();
         initEvent();
     }
+
+    protected  void startEntryAnim(){
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+    }
+
+    protected abstract int getColorId();
 
     protected abstract void initEvent();
 
@@ -35,6 +50,7 @@ public abstract class BaseActivity<Presenter extends BasePresenter> extends AppC
      */
     private void init() {
         mPresenter=createPresenter();
+        if(null !=mPresenter) mPresenter.attchView(this);
         loadingDialog = WidgetUtils.getLoadingDialog(this);
         //设置旋转速度
         loadingDialog.setLoadingSpeed(8);
@@ -74,4 +90,16 @@ public abstract class BaseActivity<Presenter extends BasePresenter> extends AppC
     public void showSnackBarMsg(String msg) {
         SnackbarUtils.Short(null,msg);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mBinder != null && mBinder != mBinder.EMPTY){
+            if(mPresenter!=null) mPresenter.unAttachView();
+            mBinder.unbind();
+            mBinder = null;
+        }
+    }
+
+
 }

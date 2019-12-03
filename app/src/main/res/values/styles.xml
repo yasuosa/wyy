@@ -10,8 +10,24 @@
 
     <style name="SplashTheme" parent="XUITheme.Phone">
         <!--充满屏幕-->
+        <item name="android:windowBackground">@drawable/bg</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MenuText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+    <style name="neteasa_music_time_seek_bar_sytle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:progressDrawable">@drawable/po_seekbar</item>
+        <item name="android:thumb">@mipmap/ic_seekbar_thumb</item>
     </style>
 
 </resources>

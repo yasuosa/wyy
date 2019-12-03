@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:background="@android:color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+                android:text="验证码已发送至"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+                android:id="@+id/login_phone_sms_phone"
+                android:text="+86 182****1111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.xuexiang.xui.widget.button.CountDownButton
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/login_phone_sms_send"
+            app:cdbt_countDownInterval="1000"
+            app:cdbt_countDown="60000"
+            style="@style/Button.Blue"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="获取验证码" />
+
+    </RelativeLayout>
+
+
+
+    <com.xuexiang.xui.widget.edittext.verify.VerifyCodeEditText
+        android:id="@+id/login_phone_sms_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginRight="10dp"
+        app:vcet_is_pwd="true"
+        app:vcet_number="4"
+        app:vcet_pwd_radius="10dp"
+        app:vcet_text_color="#000000"
+        app:vcet_width="50dp" />
+
+
+
+
+</LinearLayout>

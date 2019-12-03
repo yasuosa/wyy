@@ -1,16 +1,18 @@
 package cn.rpy.wyy.mvc.splash;
 
-import android.os.Bundle;
-import android.view.View;
+import android.content.Intent;
 import android.widget.ImageView;
 
 import com.xuexiang.xui.utils.ViewUtils;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.rpy.wyy.R;
 import cn.rpy.wyy.base.mvc.BaseActivity;
 import cn.rpy.wyy.base.mvc.BasePresenter;
+import cn.rpy.wyy.mvc.login.view.activity.LoginActivity;
 
 /**
  * @author : renpy
@@ -23,13 +25,27 @@ public class SplashActivity extends BaseActivity {
     ImageView splashImgLogo;
 
     @Override
+    protected int getColorId() {
+        return -1;
+    }
+
+    @Override
     protected void initEvent() {
 
     }
 
     @Override
     protected void initView() {
-        ViewUtils.fadeIn(splashImgLogo,2000,null);
+        ViewUtils.fadeIn(splashImgLogo,1500,null);
+        Timer timer=new Timer();
+        TimerTask timerTask=new TimerTask() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                finish();
+            }
+        };
+        timer.schedule(timerTask,2000);
     }
 
     @Override
@@ -40,5 +56,15 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_spalsh;
+    }
+
+    @Override
+    public void onSuccess(String msg) {
+
+    }
+
+    @Override
+    public void onFail(String msg) {
+
     }
 }

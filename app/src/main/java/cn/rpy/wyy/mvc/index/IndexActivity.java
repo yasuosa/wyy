@@ -1,15 +1,21 @@
-package cn.rpy.wyy.mvc.login.view;
+package cn.rpy.wyy.mvc.index;
 
+import cn.rpy.wyy.R;
 import cn.rpy.wyy.base.mvc.BaseActivity;
 import cn.rpy.wyy.base.mvc.BasePresenter;
 
 /**
  * @author : renpy
  * @e-mail : 601529188@qq.com
- * @date : 2019/12/2 23:11
+ * @date : 2019/12/3
  * @desc :
  */
-public class LoginActivity extends BaseActivity {
+public class IndexActivity extends BaseActivity {
+    @Override
+    protected int getColorId() {
+        return -1;
+    }
+
     @Override
     protected void initEvent() {
 
@@ -27,6 +33,16 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.activity_index;
+    }
+
+    @Override
+    public void onSuccess(String msg) {
+
+    }
+
+    @Override
+    public void onFail(String msg) {
+
     }
 }

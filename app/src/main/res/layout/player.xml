@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@+id/linear_player"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:clickable="true"
+    android:elevation="10dp"
+    android:focusable="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:background="@color/xui_btn_blue_normal_color">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="75dp">
+
+
+                <SeekBar
+                    android:id="@+id/sb_progress"
+                    style="@style/neteasa_music_time_seek_bar_sytle" />
+
+                <TextView
+                    android:text="欢迎！"
+                    android:id="@+id/tv_song_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sb_progress"
+                    android:layout_marginStart="15dp"
+                    android:ellipsize="end"
+                    android:maxEms="10"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:text="Rpy-Wyy"
+                    android:id="@+id/tv_singer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_song_name"
+                    android:layout_marginStart="15dp"
+                    android:ellipsize="end"
+                    android:maxEms="10"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+
+                <!--暂停-->
+                <com.xuexiang.xui.widget.button.RippleView
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="?attr/xui_config_content_spacing_horizontal"
+                    app:rv_type="simpleRipple">
+
+                    <ImageView
+                        android:src="@drawable/stop"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+
+                </com.xuexiang.xui.widget.button.RippleView>
+
+
+                <!--下一首-->
+                <com.xuexiang.xui.widget.button.RippleView
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="?attr/xui_config_content_spacing_horizontal"
+                    app:rv_type="simpleRipple">
+
+                    <ImageView
+                        android:src="@drawable/next"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+
+                </com.xuexiang.xui.widget.button.RippleView>
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <com.xuexiang.xui.widget.imageview.RadiusImageView
+            android:src="@drawable/bg"
+            circleimageview:riv_is_oval="true"
+            xmlns:circleimageview="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/circle_img"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="10dp" />
+    </FrameLayout>
+</LinearLayout>

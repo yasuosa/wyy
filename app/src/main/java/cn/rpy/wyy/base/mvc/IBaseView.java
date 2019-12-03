@@ -15,4 +15,10 @@ public interface IBaseView {
 
     //显示snack
     void showSnackBarMsg(String msg);
+
+    //获取网络接口操作成功
+    void onSuccess(String msg);
+
+    //失败
+    void onFail(String msg);
 }

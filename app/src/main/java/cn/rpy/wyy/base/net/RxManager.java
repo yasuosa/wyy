@@ -17,7 +17,7 @@ public class RxManager {
      * 加入管理容器
      * @param disposable
      */
-    public void subscribe(Disposable disposable){
+    public void add(Disposable disposable){
         compositeDisposable.add(disposable);
     }
 

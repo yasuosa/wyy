@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:background="@android:color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="未注册手机号登陆后将自动注册"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.xuexiang.xui.widget.edittext.ClearEditText
+        android:inputType="number"
+        android:maxLength="11"
+        android:id="@+id/login_ed_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cet_clearIcon="@drawable/ic_close_black_24dp"
+        app:cet_clearIconSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <com.xuexiang.xui.widget.button.ButtonView
+        android:id="@+id/login_btn_login_next"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="下一步"
+        app:textSelectedSolidColor="@android:color/darker_gray"
+        app:textSolidColor="@color/xui_btn_blue_normal_color"
+        app:textRadius="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/xui_btn_blue_normal_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.xuexiang.xui.widget.imageview.RadiusImageView
+        android:id="@+id/logo"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        app:riv_is_circle="true"
+        android:src="@mipmap/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.xuexiang.xui.widget.button.ButtonView
+        android:id="@+id/login_btn_phoneLogin"
+        app:textSolidColor="@android:color/white"
+        app:textSelectedSolidColor="@android:color/darker_gray"
+        app:textRadius="25dp"
+        android:width="300dp"
+        android:layout_above="@id/login_ll_three"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:text="手机号登陆"
+        android:gravity="center"
+        android:textColor="@color/btn_login_txtColor"
+        android:layout_marginBottom="15dp"
+        android:layout_height="40dp" />
+
+
+    <LinearLayout
+        android:id="@+id/login_ll_three"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_above="@id/login_ll_xy"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:src="@mipmap/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:src="@mipmap/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:src="@mipmap/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/login_ll_xy"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+
+            android:id="@+id/login_cb_xy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+            android:text="同意"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+            android:text="《用户协议》"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+            android:text="和"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.xuexiang.xui.widget.textview.autofit.AutoFitTextView
+            android:text="《隐私政策》"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
